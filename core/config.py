@@ -34,11 +34,13 @@ class Config:
     min_risk_reward: float = 2.0                                        # Minimum 1:2.0 R:R
     max_daily_loss_pct: float = 4.0                                     # ₹80 daily circuit stop
     
-    # High-Liquidity NSE Equity Watchlist (Liquid, priced under ₹1,500)
+    # Ethical Negative Screening: Strictly NO tobacco, alcohol, gambling, or related entities.
+    EXCLUDED_SECTORS: List[str] = field(default_factory=lambda: ["Tobacco", "Alcohol", "Gambling"])
+    
+    # High-Liquidity NSE Equity Watchlist (Liquid, priced under ₹1,500, Ethically Screened)
     instruments: Dict[str, Instrument] = field(default_factory=lambda: {
         "TATASTEEL": Instrument("TATASTEEL", "NSE_EQ|INE081A01020", "Tata Steel Limited", "Nifty Metal"),
         "ETERNAL": Instrument("ETERNAL", "NSE_EQ|INE758T01015", "Eternal Ltd (Zomato)", "Nifty Consumption"),
-        "ITC": Instrument("ITC", "NSE_EQ|INE154A01025", "ITC Limited", "Nifty FMCG"),
         "SBIN": Instrument("SBIN", "NSE_EQ|INE062A01020", "State Bank of India", "Nifty PSU Bank"),
         "TMPV": Instrument("TMPV", "NSE_EQ|INE155A01022", "Tata Motors Pass Veh Ltd", "Nifty Auto"),
         "WIPRO": Instrument("WIPRO", "NSE_EQ|INE075A01022", "Wipro Limited", "Nifty IT"),

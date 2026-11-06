@@ -129,6 +129,11 @@ class DatabaseManager:
             conn.execute("UPDATE trades SET stop_loss = ? WHERE id = ?", (new_stop_loss, trade_id))
             return True
 
+    def update_target_price(self, trade_id: int, new_target: float) -> bool:
+        with get_connection() as conn:
+            conn.execute("UPDATE trades SET target_price = ? WHERE id = ?", (new_target, trade_id))
+            return True
+
     def close_trade(self, trade_id: int, exit_price: float) -> Optional[Dict[str, Any]]:
         with get_connection() as conn:
             row = conn.execute("SELECT * FROM trades WHERE id = ? AND status = 'OPEN'", (trade_id,)).fetchone()

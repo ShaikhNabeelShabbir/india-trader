@@ -21,10 +21,10 @@ def run_eod_review() -> str:
     except Exception:
         n_close, n_chg = 0.0, 0.0
 
-    # Fetch today's closed trades
+    # Fetch today's trades (entered today or exited today)
     with get_connection() as conn:
         trades = conn.execute(
-            "SELECT * FROM trades WHERE DATE(entered_at) = DATE('now') ORDER BY id ASC"
+            "SELECT * FROM trades WHERE DATE(entered_at) = DATE('now') OR DATE(exited_at) = DATE('now') ORDER BY id ASC"
         ).fetchall()
         trades_list = [dict(t) for t in trades]
 
@@ -58,10 +58,13 @@ def run_eod_review() -> str:
     lines.append("-" * 65)
 
     if trades_list:
-        lines.append("📝 Today's Trade Log:")
+        lines.append("📝 Today's Trade Activity:")
         for t in trades_list:
-            res_str = "GAIN" if t["realized_pnl"] > 0 else "LOSS (Protected)"
-            lines.append(f" • [#{t['id']}] {t['symbol']} | Qty: {t['qty']} | Entry: ₹{t['entry_price']} ➔ Exit: ₹{t['exit_price']} | P&L: ₹{t['realized_pnl']:+,.2f} ({res_str})")
+            if t["status"] == "OPEN":
+                lines.append(f" • [#{t['id']}] {t['symbol']} | Qty: {t['qty']} | Entry: ₹{t['entry_price']:.2f} | Status: 🟢 ACTIVE SWING HOLDING | Target: ₹{t['target_price']:.2f}")
+            else:
+                res_str = "GAIN" if t["realized_pnl"] > 0 else "LOSS (Protected)"
+                lines.append(f" • [#{t['id']}] {t['symbol']} | Qty: {t['qty']} | Entry: ₹{t['entry_price']:.2f} ➔ Exit: ₹{t['exit_price']:.2f} | P&L: ₹{t['realized_pnl']:+,.2f} ({res_str})")
     else:
         lines.append("• No trades executed today.")
 

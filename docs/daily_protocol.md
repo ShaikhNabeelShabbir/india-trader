@@ -50,16 +50,22 @@ This document defines the daily operating rhythm and partnership between the **T
 
 ---
 
+## 🚫 Ethical Negative Screening Rule (Mandatory & Permanent)
+- **Strict Prohibition**: The system strictly excludes companies in **tobacco (e.g. ITC), alcohol, gambling, or related predatory businesses**.
+- Such stocks will **never** be shortlisted, analyzed for entry, or traded under any circumstances, regardless of technical momentum.
+
+---
+
 ## 📈 Continuous Strategy Evolution & Profit Optimization
 
 A core directive of this partnership is **continual refinement to maximize profitability**:
-1. **Trade Post-Mortems**:
-   - Review winning trades: What made the entry clean? Could we have trailed the stop higher for extra gains?
-   - Review losing / scratched trades: Was there adverse sectoral news? Did we enter too close to resistance?
-2. **Dynamic Strategy Tuning**:
-   - Calibrate indicator thresholds (e.g. RSI bands, 20 EMA vs 9 EMA pullback sensitivity).
-   - Adapt to changing market regimes (low volatility consolidation vs high momentum trending days).
-   - Expand our liquid watchlist as capital compounds into higher tiers (e.g., ₹2,500 ➔ ₹3,000 ➔ ₹5,000).
-3. **Compounding Acceleration**:
-   - As our bankroll grows from ₹2,000, our 1.5% risk budget expands proportionally (₹30 ➔ ₹45 ➔ ₹60), enabling larger position sizes and accelerating account growth safely without taking excessive risk.
+1. **The Dual-Basket Hedging Edge (Learned Nov 6, 2026)**:
+   - When capital allows (₹3,000+), splitting exposure across two uncorrelated sector leaders (e.g., Tech + Consumption) eliminates single-sector drag. Even when one sector consolidates (WIPRO -1.4%), the other surges (ETERNAL +1.7%), preserving positive net portfolio equity (+₹10.05).
+2. **The Delivery Swing Edge over Intraday MIS**:
+   - Trading in `NSE · DELIVERY` eliminates broker 3:15 PM auto-square-off pressure. Intraday noise can be held into multi-day swing targets, allowing full institutional expansion to play out.
+3. **Muhurat Trading Protocol (Diwali Special Session)**:
+   - **Market Microstructure**: 1-hour auspicious ceremonial session with >80% historical green close rate, virtually zero institutional dumping, and elevated retail buying spikes.
+   - **Pre-Muhurat Action Plan**: Review pre-open matching 15 minutes before the session starts (e.g. 2:05 PM – 2:15 PM). Set resting limit sell orders at target zones to capture liquidity spikes without manual chasing.
+4. **Trade Post-Mortems & Risk Budgeting**:
+   - As bankroll compounds into higher tiers (₹3,000 ➔ ₹5,000), single-trade risk expands proportionally (₹45 ➔ ₹75), accelerating account growth safely under the 1.5% rule.
 
